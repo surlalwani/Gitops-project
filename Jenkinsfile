@@ -26,7 +26,7 @@ node {
             app.push("${env.BUILD_NUMBER}")
         }
     }
-    sh "sudo docker build -t raj80dockerid/test ."
+    sh "sudo docker build -t surlalwani/gitops ."
     stage('Trigger ManifestUpdate') {
                 echo "triggering updatemanifestjob"
                 build job: 'updatemanifest', parameters: [string(name: 'DOCKERTAG', value: env.BUILD_NUMBER)]
