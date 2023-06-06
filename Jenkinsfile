@@ -8,8 +8,8 @@ node {
     }
 
     stage('Build image') {
-       sh "sudo docker build -t raj80dockerid/test ."
-       app = docker.image("raj80dockerid/test")
+       
+       app = docker.build("surlalwani/gitops")
     }
 
     stage('Test image') {
